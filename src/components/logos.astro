@@ -1,0 +1,25 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const logos = [
+  { name: "simple-icons:adobe", size: 8, mdSize: 16 },
+  { name: "simple-icons:react", size: 8, mdSize: 12 },
+  { name: "simple-icons:svelte", size: 8, mdSize: 12 },
+  { name: "simple-icons:astro", size: 8, mdSize: 12 },
+  { name: "simple-icons:tailwindcss", size: 8, mdSize: 16 },
+  { name: "simple-icons:dotnet", size: 8, mdSize: 16 },
+  { name: "simple-icons:vercel", size: 8, mdSize: 12 },
+];
+---
+
+<div class="mt-24">
+  <h2 class="text-center text-slate-500">Works with your technologies</h2>
+  <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
+    {
+      (logos).map(({ name, size, mdSize }) => (
+        <Icon class={`size-${size} md:size-${mdSize}`} name={name} />
+      ))
+    }
+  </div>
+</div>

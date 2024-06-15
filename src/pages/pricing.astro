@@ -1,0 +1,82 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import PricingCard from "@components/pricing.astro";
+
+const pricing = [
+  {
+    name: "Basic",
+    price: "Custom",
+    popular: false,
+    features: [
+      "Document Processing (CV Writing, Typesetting, Data Entry)",
+      "Basic Printing Services (Bulk Printing, Photocopy, Scanning)",
+      "Online Support",
+      "Basic eCitizen Services (Birth Certificate Application, Land Records Search)",
+      "Basic KRA Services (KRA PIN Registration, KRA Returns)",
+      "Basic NTSA and TIMS Services (Motor Vehicle Registration, Confirmation of Ownership)",
+      "Basic Graphic Design (Poster, Fliers, Business Cards)",
+      "Basic Training Services (Computer Packages)",
+    ],
+    button: {
+      text: "Contact Us",
+      link: "/contact",
+    },
+  },
+  {
+    name: "Standard",
+    price: "Custom",
+    popular: true,
+    features: [
+      "Advanced Document Processing (PDF Editing, Project Research)",
+      "Enhanced Printing Services (Books Printing, Exams Printing)",
+      "Expanded eCitizen Services (Certificate of Good Conduct Applications, Driving License Renewal)",
+      "Expanded KRA Services (Tax Compliance Certificate, Advance Tax)",
+      "Expanded NTSA and TIMS Services (Motor Vehicle Change of Particulars, Number Plate)",
+      "Advanced Graphic Design (Banners, Brochures, Logo and Branding)",
+      "Advanced Training Services (Graphic Designs, Database Development)",
+    ],
+    button: {
+      text: "Contact Us",
+      link: "/contact",
+    },
+  },
+  {
+    name: "Premium",
+    price: {
+      monthly: "KSH: 1500/=",
+      yearly: "KSH: 40,000/=",
+    },
+    popular: false,
+    features: [
+      "Customized Document Processing",
+      "Premium Printing Services",
+      "Full Suite of eCitizen Services (Business Name Registration, CR12 Applications)",
+      "Full Suite of KRA Services (KRA PIN Retrieval)",
+      "Full Suite of NTSA and TIMS Services (E-Sticker, PSV)",
+      "Premium Graphic Design (Certificates, Company Profile, Personal Profile)",
+      "Premium Training Services (Advanced Graphic Designs, Database Development)",
+    ],
+    button: {
+      text: "Contact Us",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Pricing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Our Services</Fragment>
+      <Fragment slot="desc">
+        Customized solutions to fit your business needs.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <PricingCard plan={item} />)}
+    </div>
+  </Container>
+</Layout>

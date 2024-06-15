@@ -1,0 +1,69 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Comprehensive Document Services",
+    description:
+      "From CV writing to typesetting and data entry, we provide a full range of document services to meet your needs.",
+    icon: "bx:bxs-file",
+  },
+  {
+    title: "Government eCitizen Services",
+    description:
+      "Get assistance with birth certificate applications, good conduct certificates, land records search, and more.",
+    icon: "bx:bxs-id-card",
+  },
+  {
+    title: "KRA and Tax Services",
+    description:
+      "We offer KRA PIN registration, tax returns filing, tax compliance certificates, and more to keep you compliant.",
+    icon: "bx:bxs-credit-card",
+  },
+  {
+    title: "NTSA and TIMS Services",
+    description:
+      "From motor vehicle registration to driving license applications, we handle all your NTSA and TIMS needs.",
+    icon: "bx:bxs-car",
+  },
+  {
+    title: "Professional Graphic Design",
+    description:
+      "Our graphic design services include posters, fliers, banners, brochures, business cards, logos, and branding.",
+    icon: "bx:bxs-paint",
+  },
+  {
+    title: "Computer Repair and Support",
+    description:
+      "We provide comprehensive computer repair services and online support to ensure your devices are always running smoothly.",
+    icon: "bx:bxs-wrench",
+  },
+];
+
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Your One-Stop Solution for Digital Services
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    At ComputerClinic254, we offer a wide range of services to cater to all your digital and technical needs. Explore our services and see how we can help you.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
