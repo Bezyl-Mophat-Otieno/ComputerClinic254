@@ -1,0 +1,28 @@
+---
+// components/ServiceDetails.astro
+const { service } = Astro.props;
+const { title , submissionRequirements, steps } = service
+console.log(submissionRequirements)
+---
+
+<details class="mb-6 border border-gray-300 rounded-md shadow-md transition-all duration-500">
+  <summary class="px-4 py-2 bg-gray-100 cursor-pointer outline-none text-lg font-bold mb-2">{title}</summary>
+  <div class="px-4 py-2">
+    {submissionRequirements.length > 0 && (
+      <>
+        <p class="mb-2">Submission Requirements:</p>
+        <ul class="list-disc pl-6 mb-2">
+          {submissionRequirements.map((requirement, index) => (
+            <li>{requirement}</li>
+          ))}
+        </ul>
+      </>
+    )}
+    <p class="mb-2">Steps:</p>
+    <ol class="list-decimal pl-6">
+      {steps.map((step) => (
+        <li>{step}</li>
+      ))}
+    </ol>
+  </div>
+</details>

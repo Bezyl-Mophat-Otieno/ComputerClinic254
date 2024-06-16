@@ -1,0 +1,359 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import ServiceDetails from "@components/servicedetails.astro";
+
+const services = [
+  {
+    serviceName: "Cyber Services",
+    services: [
+      {
+        title: "Create an account on eCitizen platform following these steps:",
+        submissionRequirements: [],
+        steps: [
+          "Open your browser and go to the eCitizen website.",
+          "Click on the 'Create Account' tab on the right-hand side of the screen.",
+          "Choose the type of account you want to create: Kenyan Citizen, Foreign Residents, Visitors, Business.",
+          "Follow the on-screen instructions to complete the process."
+        ]
+      },
+      {
+        title: "Birth Certificate Application",
+        submissionRequirements: [
+          "Scanned copy of a birth notification",
+          "Scanned copy of National ID for applicants over 18 years",
+          "Scanned copy of a parent’s ID",
+          "A scanned copy of an original birth certificate for replacements",
+          "Payment of application fees"
+        ],
+        steps: [
+          "Sign in to eCitizen.",
+          "Fill in an online form and upload relevant documents in PDF format.",
+          "Choose the type of birth certificate application.",
+          "Attach scanned copies of required documents.",
+          "Choose a pickup location for the certificate.",
+          "Complete payment using Mpesa."
+        ]
+      },
+      {
+        title: "Good Conduct",
+        submissionRequirements: [],
+        steps: [
+          "Log in to your eCitizen account and sign in using your username (your email address) and password, redirecting you to the eCitizen dashboard.",
+          "Click 'Get Service Now,' which is under the category 'Directorate of Criminal Investigations.' Follow the application guidelines.",
+          "Choose the payment mode to pay Ksh. 1,050 via M-Pesa for the Good Conduct Certificate to be processed.",
+          "Download the certificate of good conduct and print two copies of the payment invoice and a copy of the C24 form on both sides of the A4 paper. Proceed to present the document to the nearest CID offices once you complete the online application.",
+          "You are required to carry the invoice, C24 document, and an original identification document or original birth certificate in the case of a minor. CID personnel will take you through fingerprint processing at the divisional CID offices or a Huduma Centre near you."
+        ]
+      },
+      {
+        title: "CV Writing",
+        submissionRequirements: [],
+        steps: [
+          "Choose the Right Format:",
+          "There are different CV formats, but the most common ones are the chronological, functional, and combination (or hybrid) formats.",
+          "Chronological: Lists your work experience in reverse chronological order, starting with the most recent job.",
+          "Functional: Focuses on your skills and qualifications, often used if you have employment gaps or are changing careers.",
+          "Combination: Combines elements of both chronological and functional formats.",
+          "Contact Information:",
+          "Include your full name, phone number, email address, and optionally, your LinkedIn profile (if relevant).",
+          "You don't need to include your physical address, but it's a good idea to mention your city and state or country.",
+          "Professional Summary or Objective (optional):",
+          "A brief, 2-3 sentence statement that summarizes your career goals and what you bring to the table.",
+          "Use this section if you're targeting a specific role or industry.",
+          "Education:",
+          "List your educational qualifications in reverse chronological order.",
+          "Include the name of the institution, degree earned, major, graduation date, and any relevant honors or awards.",
+          "Work Experience:",
+          "List your work experience in reverse chronological order.",
+          "Include the name of the company, your job title, the dates you worked there, and a concise description of your responsibilities and achievements.",
+          "Use action verbs and quantify your achievements (e.g., 'increased sales by 20%,' 'managed a team of 10 employees').",
+          "Skills:",
+          "Include a skills section to highlight both technical and soft skills.",
+          "Categorize your skills (e.g., technical skills, language skills, leadership skills) and provide evidence or examples of how you've used them.",
+          "Achievements and Projects (optional):",
+          "If relevant, include a section highlighting specific projects, publications, or achievements.",
+          "This can demonstrate your expertise and add depth to your CV.",
+          "Certifications and Training (optional):",
+          "List any certifications, workshops, or training programs that are relevant to your field.",
+          "Volunteer Work (optional):",
+          "If you've done volunteer work that's related to your career goals, you can include it in a separate section.",
+          "References:",
+          "You don't need to include references on your CV. Simply state, 'References available upon request.'",
+          "Proofread and Format:",
+          "Review your CV for errors in spelling, grammar, and formatting.",
+          "Use a clean and professional font (e.g., Arial, Times New Roman).",
+          "Ensure consistent formatting and bullet points.",
+          "Tailor Your CV:",
+          "Customize your CV for each job application. Highlight the most relevant skills and experiences for the specific position you're applying for.",
+          "Keep it Concise:",
+          "Aim for a two-page CV but be willing to extend to three pages if you have extensive experience."
+        ]
+      },
+      {
+        title: "Land Record Research",
+        submissionRequirements: [],
+        steps: [
+          "Log In to Your Account",
+          "On the eCitizen dashboard, click the “Ministry of Lands and Physical Planning” tab.",
+          "Go to the Ministry of Land portal and select 'Land Search.'",
+          "As shown on the land title deed, enter the land title number.",
+          "Fill the online land search form that appears after entering the land title number.",
+          "Click Next to access the results page for your land search.",
+          "Review the land search results."
+        ]
+      },
+      {
+        title: "Paying Land Rates",
+        submissionRequirements: [],
+        steps: [
+          "Create or Access Your e-Citizen Account:",
+          "Visit the e-Citizen portal for your country or region and log in to your e-Citizen account using your username and password. If you don't have an account, you may need to create one by providing your personal information and completing the registration process.",
+          "Navigate to the Land Rates Payment Section:",
+          "Once logged in, look for the section on the e-Citizen portal related to land rates or property taxes.",
+          "Select the Property for Which You Want to Pay Land Rates:",
+          "Use the provided search tools to identify the specific property for which you want to pay land rates. You may need to enter the property details, such as the PIN (Parcel Identification Number) or other identifying information.",
+          "View the Land Rates Assessment:",
+          "After selecting the property, you should be able to view the assessed land rates for that property. This information typically includes the amount due, the due date, and any applicable penalties or interest.",
+          "Choose a Payment Method:",
+          "e-Citizen portals often offer various payment methods, including credit or debit card payments, mobile money, or bank transfers. Select the payment method that is most convenient for you.",
+          "Enter Payment Information:",
+          "Provide the necessary payment information, such as your credit card details or bank account information. Ensure that the information is accurate.",
+          "Confirm and Complete the Payment:",
+          "Review the payment details to ensure they are correct. Confirm the payment, and follow the on-screen instructions to complete the transaction.",
+          "Receive Payment Confirmation:",
+          "Upon successful payment, you should receive a confirmation receipt or acknowledgment. It's a good practice to save or print this receipt for your records."
+        ]
+      },
+      {
+        title: "Driving License Renewal",
+        submissionRequirements: [],
+        steps: [
+          "Create or Access Your e-Citizen Account:",
+          "Visit the e-Citizen portal for your country or region and log in to your e-Citizen account using your username and password. If you don't have an account, you may need to create one by providing your personal information and completing the registration process.",
+          "Locate the Driving License Renewal Section:",
+          "Once logged in, navigate to the section of the e-Citizen portal related to driving license renewal. This section may be labeled differently, but it is typically under the transport or licensing category (NTSA).",
+          "Review Renewal Requirements:",
+          "Read the renewal requirements and instructions provided on the e-Citizen portal. Ensure that you meet all the criteria for driving license renewal.",
+          "Start the Renewal Process:",
+          "Initiate the renewal process by providing the necessary information. This may include your current driving license details and personal information.",
+          "Check Renewal Fees and Pay:",
+          "Review the renewal fees and payment options. You can usually pay the renewal fee online using a credit or debit card, mobile money, or other accepted payment methods.",
+          "Upload or Submit Documents:",
+          "If the e-Citizen portal allows for document uploads, follow the instructions to provide the necessary documents electronically.",
+          "Submit Your Application:",
+          "After providing all the required information, making the payment, and submitting any necessary documents, complete the driving license renewal application on the e-Citizen portal.",
+          "Receive Renewal Confirmation:",
+          "Upon successful submission and payment, you should receive a confirmation of your driving license renewal. This may be in the form of a receipt or an acknowledgment.",
+          "Receive Your Renewed Driving License:",
+          "Once your renewal is approved, you will receive your renewed driving license."
+        ]
+      },
+        {
+        title: "Business Name Search and Reservation",
+        steps: [
+          "Create or Access Your e-Citizen Account: Visit the e-Citizen portal for your country or region and log in to your e-Citizen account using your username and password. If you don't have an account, you may need to create one by providing your personal information and completing the registration process.",
+          "Navigate to the Business Registration Section: Once logged in, look for the section on the e-Citizen portal related to business registration or company registration.",
+          "Business Name Search: Perform a business name search to check the availability of the name you want for your business. Enter the desired business name, and the portal will typically provide you with a list of similar or identical names and their availability status.",
+          "Review Name Guidelines and Restrictions: Be sure to review any business name guidelines and restrictions imposed by your local business registration authority. These guidelines may include name length, words or phrases that are prohibited, and other naming rules.",
+          "Reserve a Business Name: If your chosen business name is available and meets all the necessary criteria, you can typically proceed to reserve the name. This might involve a fee, and you may need to provide additional information about your business.",
+          "Payment and Confirmation: Review the reservation fee and payment options. You can usually make the payment online using a credit or debit card, mobile money, or other accepted payment methods. Once the payment is successful, you should receive a confirmation of the name reservation.",
+          "Receive Reservation Confirmation: After your name reservation is approved, you will typically receive a confirmation that the business name has been reserved for your use. This confirmation may include a reservation certificate or acknowledgment.",
+          "Proceed with Business Registration: With your business name reserved, you can now proceed with the formal business registration process. This typically involves submitting additional information about your business, such as its structure, ownership, and location."
+        ],
+        submissionRequirements: []
+      },
+      {
+        title: "Business Name Registration",
+        steps: [
+          "Create or Access Your e-Citizen Account: Visit the e-Citizen portal and log in to your e-Citizen account using your username and password. If you don't have an account, you may need to create one by providing your personal information and completing the registration process.",
+          "Select the Business Registration Service: Once logged in, navigate to the section of the e-Citizen portal related to business registration.",
+          "Choose the Business Name Registration Option: Within the business registration section, look for the option related to registering a business name. Click on this option to initiate the registration process.",
+          "Verify Business Name Availability: Enter the desired business name and perform a name availability search. The portal will check if the name is available for registration. Ensure your chosen name is unique and complies with naming regulations.",
+          "Provide Business Details: Follow the prompts to enter details about your business, including the business structure (e.g., sole proprietorship, partnership, limited liability company), business address, and ownership information.",
+          "Pay the Registration Fee: Review the registration fees and payment options. You can typically make the payment online using a credit or debit card, mobile money, or other accepted payment methods.",
+          "Receive Registration Confirmation: After successful payment, you should receive a confirmation of your business name registration. This may include a registration certificate or acknowledgment."
+        ],
+        submissionRequirements: []
+      },
+      {
+        title: "C12 Application",
+        steps: [
+          "Create or Access Your e-Citizen Account: Visit the e-Citizen portal  and log in to your e-Citizen account using your username and password. If you don't have an account, you may need to create one by providing your personal information and completing the registration process.",
+          "Navigate to the Company Registry Section: Once logged in, look for the section of the e-Citizen portal related to the Company Registry or Company Services.",
+          "Select the CR12 Application Option: Within the Company Registry section, look for the CR12 application option. Click on this option to initiate the application process.",
+          "Provide Company and Director Details: Follow the prompts to enter details about the company for which you need the CR12 certificate. You may need to provide the company's name and registration number. Additionally, you'll need to provide the names and ID numbers of the directors for whom you are requesting the certificate.",
+          "Pay the Application Fee: Review the application fees and payment options. You can typically make the payment online using a credit or debit card, mobile money, or other accepted payment methods.",
+          "Submit the Application: After entering all the required information and making the payment, submit the CR12 application through the e-Citizen portal.",
+          "Receive Application Confirmation: After a successful application, you should receive a confirmation of your CR12 application. This may include an acknowledgment or reference number."
+        ],
+        submissionRequirements: []
+      },
+      {
+        title: "KRA Pin Registration",
+        steps: [
+          "Access the iTax Portal: Visit the Kenya Revenue Authority's iTax portal at https://itax.kra.go.ke/.",
+          "PIN Application: For new PIN registration, you'll be asked to select your mode of registration, e.g., for individual, non-individual (for companies, partnerships, etc.), or as an employee. Choose the relevant category and continue.",
+          "Basic Information: Fill in your basic details, including your nationality, your name, gender, date of birth, email address, and phone number.",
+          "Password Creation: Create a password for your iTax account, and confirm it. Make sure it's strong and secure.",
+          "Security Question: Select a security question and provide an answer. This is used for account recovery.",
+          "KRA PIN Application Form (P9A): Complete the KRA PIN Application form (P9A) with the required information, such as your physical and postal address, marital status, and other personal details.",
+          "Source of Income: Provide details about your source of income, including employment details, business details, or any other source of income.",
+          "Bank Details: Enter your bank account details, including the bank name, branch, and account number. This is important for tax refunds.",
+          "Tax Obligations: Declare your tax obligations, including whether you have any taxes pending or not. You will be required to declare that the information provided is accurate.",
+          "Declaration: Review the information you've provided, and if everything is correct, click the 'Submit' button. Read and accept the declaration statement.",
+          "Acknowledgment: You will receive an acknowledgment for your application. This will include a Transaction Code, and you can print the acknowledgment for reference.",
+          "Verification: Your KRA PIN application will be processed, and you may receive an email notification once it's ready. This may take a few days.",
+          "Certificate Download: Once your KRA PIN certificate is ready, log in to your iTax account, go to the 'Registration' tab, and select 'Download PIN Certificate' to obtain a copy of your KRA PIN certificate."
+        ],
+        submissionRequirements: []
+      },
+      {
+        title: "KRA Returns",
+        steps: [
+          "For Individual Taxpayers:",
+          "Access the iTax Portal: Visit the Kenya Revenue Authority's iTax portal at https://itax.kra.go.ke/. Log in to your iTax account.",
+          "Select the Appropriate Tax Return Form: In your iTax dashboard, select the tax return form that corresponds to your source of income. Common options include the ITR (Income Tax Resident) form for employed individuals and the P9 form for salaried employees.",
+          "Complete the Tax Return Form: Fill out the tax return form with accurate and up-to-date information. This typically includes details about your income, deductions, and other relevant financial information.",
+          "Review the Form: Double-check all the information you've provided for accuracy, ensuring that you have not omitted any relevant details.",
+          "Calculate Your Tax Liability: The iTax portal will automatically calculate your tax liability based on the information you provided. It will consider any tax deductions or exemptions that apply to you.",
+          "Payment (if applicable): If you owe taxes, you can make the payment directly through the iTax portal using various payment options, including mobile money, bank transfer, or credit card. Ensure the payment is made before submitting your returns.",
+          "Submit the Tax Return: Once you've completed the form, calculated your tax liability, and made the payment (if applicable), submit the tax return through the iTax portal. You will receive a submission acknowledgment.",
+          "Download Acknowledgment Receipt: Download the acknowledgment receipt for your records. It serves as proof that you've filed your tax returns.",
+          "For Businesses (SMEs and Corporations):",
+          "Access the iTax Portal: Log in to your iTax account, or if you're a new business, register for one as described in a previous response.",
+          "Select the Appropriate Tax Return Form: Choose the tax return form that matches your business structure and source of income. Common forms include P9 for employees, IT1 for sole proprietors, and CIT for companies.",
+          "Complete the Tax Return Form: Fill out the form with detailed information about your business's income, expenses, deductions, and any tax incentives or exemptions applicable to your business.",
+          "Review the Form: Carefully review the form to ensure all information is accurate, and you haven't left out any relevant details.",
+          "Calculate the Tax Liability: The iTax portal will automatically calculate your tax liability based on the information provided.",
+          "Make the Payment (if applicable): If you owe taxes, make the payment through the iTax portal using the available payment options. Ensure payment is made before submitting your returns.",
+          "Submit the Tax Return: Once the form is complete and payment is made (if applicable), submit the tax return through the iTax portal.",
+          "Download Acknowledgment Receipt: Download and keep the acknowledgment receipt as proof of filing."
+        ],
+        submissionRequirements: []
+      }
+    ],
+  },
+  {
+  serviceName: "Other Services",
+  services: [
+    {
+      title: "Duplicate Logbook",
+      steps: [
+        "Access the NTSA TIMS Portal: Visit the NTSA TIMS portal at https://tims.ntsa.go.ke/. You can access this portal from a computer or mobile device with an internet connection.",
+        "Log in to Your TIMS Account: Log in to your existing TIMS account using your username and password. If you don't have an account, you'll need to create one. To create an account, click on the 'Register an Account' link and follow the registration process, providing your personal details and creating a password.",
+        "Start a New Application for Duplicate Logbook: Inside your TIMS account, you will find various services. To apply for a duplicate logbook, select the 'Duplicate Logbook' or 'Replacement Logbook' option.",
+        "Provide Vehicle Details: Enter the details of the vehicle for which you need a duplicate logbook. This includes the vehicle's make, model, registration number, and the chassis number.",
+        "Specify the Reason for the Duplicate Logbook: Indicate the reason for needing a duplicate logbook. Common reasons include loss, theft, or damage of the original logbook.",
+        "Attach Supporting Documents: You may need to provide supporting documents to justify the need for a duplicate logbook. For example, if the logbook was lost or stolen, you might need to attach a copy of the police abstract.",
+        "Payment of Fees (if applicable): Review the duplicate logbook fees, and if there are any applicable charges, make the payment using the provided payment options on the TIMS portal. Payment options can include mobile money, credit card, and bank transfers.",
+        "Submit the Application: After providing all the necessary information and attaching relevant documents, submit the application for a duplicate logbook.",
+        "Verification and Approval: The NTSA will review your application for the duplicate logbook and may conduct necessary checks. The approval process may take some time.",
+        "Receive the Duplicate Logbook: After the NTSA approves your application, you will receive the duplicate logbook."
+      ],
+      submissionRequirements: []
+    },
+    {
+      title: "Number Plate",
+      steps: [
+        "Log in to the NTSA website.",
+        "Once logged in, click on the vehicle registration.",
+        "Select Reflective No. Plate then click on Apply for reflective plate.",
+        "Select your vehicle from the list you have and click on 'NEXT'.",
+        "Select Reason for Application. Choose the reason for your application as 'NEW GENERATION PLATE'.",
+        "Choose the notification method; email or SMS.",
+        "Choose your preferred number plate and format, i.e. oblong or square.",
+        "Select the collection centre and the ID of the person who will collect the plates.",
+        "Upload a PDF form of your original logbook and plates, both the rear and front.",
+        "Confirm the vehicle particulars then pay Ksh 3,050 via M-Pesa.",
+        "Once the payment is made, you will receive a collection notification within 7 days."
+      ],
+      submissionRequirements: []
+    },
+    {
+      title: "Forced Transfer",
+      steps: [
+        "Go to the NTSA website and sign in to your account. If you don’t have an account, you can create one for free.",
+        "Click on the 'Motor Vehicle Registration' tab.",
+        "Click on the 'Apply for Forced Transfer Motor Vehicle' link.",
+        "Enter the vehicle’s registration number.",
+        "Select the reason for applying for a forced transfer.",
+        "Fill in the required details.",
+        "Upload in PDF your original logbook and plates (rear and front).",
+        "Select your collection center, and enter the ID number of the person who will collect it.",
+        "Make a payment of KES 3,050.",
+        "Submit your application."
+      ],
+      submissionRequirements: []
+    },
+    {
+      title: "Motor Vehicle Booking Inspection",
+      steps: [
+        "Access the NTSA TIMS Portal: Visit the NTSA TIMS portal at https://tims.ntsa.go.ke/. You can access this portal from a computer or mobile device with an internet connection.",
+        "Log in to Your TIMS Account: Log in to your existing TIMS account using your username and password. If you don't have an account, you'll need to create one. To create an account, click on the 'Register an Account' link and follow the registration process, providing your personal details and creating a password.",
+        "Start a New Vehicle Inspection Appointment: Inside your TIMS account, you will find various services. To apply for a vehicle inspection booking, select the 'Book for Inspection' or 'Inspection Booking' option.",
+        "Provide Vehicle Details: Enter the details of the vehicle that needs to be inspected. This typically includes the vehicle's make, model, registration number, and the chassis number.",
+        "Select Inspection Center: Choose the inspection center where you want to have the vehicle inspected. You can select from the available inspection centers listed on the portal.",
+        "Pick an Inspection Date and Time: Select a convenient date and time for the vehicle inspection. This should be a time when the vehicle can be made available for the inspection.",
+        "Payment of Inspection Fees: Review the inspection fees, and if there are any applicable charges, make the payment using the provided payment options on the TIMS portal. Payment options can include mobile money, credit card, and bank transfers.",
+        "Submit the Inspection Booking: After providing all the necessary information and making the payment, submit the inspection booking request.",
+        "Confirmation and Notification: You will receive confirmation of the inspection appointment, including the date, time, and location. This confirmation can be provided through the TIMS portal, email, or SMS.",
+        "Attend the Inspection: On the scheduled date and time, take the vehicle to the chosen inspection center for the inspection. Ensure you have all the necessary documents and fees for the inspection.",
+        "Receive Inspection Report: After the inspection, you will receive an inspection report indicating whether the vehicle is roadworthy and compliant with NTSA regulations."
+      ],
+      submissionRequirements: []
+    },
+    {
+      title: "E-Stickers",
+      steps: [
+        "Access the NTSA TIMS Portal: Visit the NTSA TIMS portal at https://tims.ntsa.go.ke/. You can access this portal from a computer or mobile device with an internet connection.",
+        "Log in to Your TIMS Account: Log in to your existing TIMS account using your username and password. If you don't have an account, you'll need to create one. To create an account, click on the 'Register an Account' link and follow the registration process, providing your personal details and creating a password.",
+        "Start a New Application for E-Stickers: Inside your TIMS account, you will find various services. To apply for e-stickers, select the 'Apply for E-Sticker' or 'E-Sticker Application' option.",
+        "Provide Vehicle Details: Enter the details of the vehicle for which you want to apply for e-stickers. This typically includes the vehicle's make, model, registration number, and the chassis number.",
+        "Select E-Sticker Type: Choose the type of e-sticker you need. There may be different e-sticker categories based on vehicle type and usage.",
+        "Payment of E-Sticker Fees: Review the e-sticker fees, and if there are any applicable charges, make the payment using the provided payment options on the TIMS portal. Payment options can include mobile money, credit card, and bank transfers.",
+        "Submit the E-Sticker Application: After providing all the necessary information and making the payment, submit the e-sticker application.",
+        "E-Sticker Issuance: The NTSA will process your application, and upon approval, you will receive the e-sticker electronically. You may receive it as a digital file or code.",
+        "Installation of the E-Sticker: Follow the NTSA's instructions for installing the e-sticker on your vehicle, typically in a visible location."
+      ],
+      submissionRequirements: []
+    },
+    {
+      title: "PSV",
+      steps: [
+        "Access the NTSA TIMS Portal: Visit the NTSA TIMS portal at https://tims.ntsa.go.ke/. You can access this portal from a computer or mobile device with an internet connection.",
+        "Log in to Your TIMS Account: Log in to your existing TIMS account using your username and password. If you don't have an account, you'll need to create one. To create an account, click on the 'Register an Account' link and follow the registration process, providing your personal details and creating a password.",
+        "Start a New Application for PSV License: Inside your TIMS account, you will find various services. To apply for a PSV license, select the 'PSV License' or 'Public Service Vehicle License' option.",
+        "Provide Vehicle and Operator Details: Enter the details of the vehicle and operator for which you want to apply for a PSV license. This includes the vehicle's make, model, registration number, and the operator's information.",
+        "Select the Type of PSV License: Choose the type of PSV license you are applying for, such as matatu, bus, or minibus.",
+        "Attach Required Documents: You may need to attach supporting documents, such as vehicle inspection reports and operator documents, as part of the application. Ensure you have all the required documentation.",
+        "Payment of License Fees: Review the PSV license fees, and if there are any applicable charges, make the payment using the provided payment options on the TIMS portal",
+        "Submit the PSV License Application: After providing all the necessary information and making the payment, submit the PSV license application.",
+    ],
+    submissionRequirements: []
+
+  },
+]
+}
+
+]
+---
+
+<Layout title="eCitizen Services">
+  <Container>
+    <section>
+       {
+      services.map((service) => (
+      <details class="mb-6 border border-gray-300 rounded-md shadow-md transition-all duration-500">
+                  <summary class="px-4 py-2 bg-gray-100 cursor-pointer outline-none text-3xl font-bold mb-2">{service.serviceName}</summary>
+                  {
+                    service.services.map((service) => (
+                      <ServiceDetails service={service} />
+                    ))
+                  }
+      </details>
+        ))
+       }
+    </section>
+  </Container>
+</Layout>
